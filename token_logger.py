@@ -1,7 +1,7 @@
 """
-token_logger.py  –  WIGA Future Growth Radar
+token_logger.py  –  Foresight
 Tracks Anthropic API token usage and cost per call, per stock, per session.
-Drop this file into C:\\WIGA\\ and import it in ai/analyzer.py
+Drop this file into C:\Foresight\ and import it in ai/analyzer.py
 """
 
 import json
@@ -78,7 +78,7 @@ class TokenLogger:
         elapsed      = datetime.now() - self.session_start
 
         print("\n" + "═" * 55)
-        print("  WIGA  ·  API Token Usage  ·  Session Summary")
+        print("  Foresight  ·  API Token Usage  ·  Session Summary")
         print("═" * 55)
         print(f"  Calls          : {calls}")
         print(f"  Input tokens   : {total_input:,}")
@@ -87,8 +87,8 @@ class TokenLogger:
         print(f"  Total cost     : ${total_cost:.4f}")
         print(f"  Elapsed        : {str(elapsed).split('.')[0]}")
 
-        # Remaining budget estimate (if WIGA_BUDGET env var is set)
-        budget = float(os.getenv("WIGA_BUDGET", "0"))
+        # Remaining budget estimate (if FORESIGHT_BUDGET env var is set)
+        budget = float(os.getenv("FORESIGHT_BUDGET", os.getenv("FORESIGHT_BUDGET", "0")))
         if budget > 0:
             spent_all_time = self._total_spent_all_time()
             remaining = budget - spent_all_time

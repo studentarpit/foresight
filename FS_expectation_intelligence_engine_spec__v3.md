@@ -1,11 +1,11 @@
-# WIGA Future Growth Radar
+# Foresight
 # Expectation Intelligence Engine — Technical Specification
 
 ---
 
 # 1. Overview
 
-This document captures the implementation-level specification for the newly identified core capability of the WIGA Future Growth Radar platform:
+This document captures the implementation-level specification for the newly identified core capability of the Foresight platform:
 
 # "Expectation Intelligence Engine"
 

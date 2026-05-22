@@ -1,4 +1,4 @@
-# WIGA Future Growth Radar — Feature Specification
+# Foresight — Feature Specification
 
 ## Overview
 An AI-powered Indian equity discovery platform that scans listed companies, extracts future

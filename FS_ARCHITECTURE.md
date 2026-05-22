@@ -1,4 +1,4 @@
-# WIGA Future Growth Radar — Architecture & Feature Map
+# Foresight — Architecture & Feature Map
 ### Single Source of Truth · Last updated 2026-05-22
 
 ---
@@ -196,7 +196,7 @@ sequenceDiagram
 
 ```mermaid
 mindmap
-  root((WIGA\nFuture Growth\nRadar))
+  root((Foresight))
     Tab1[Tab 1 · Market Radar]
       FVS Score 0-100
       4-band Signal Strong Buy/Watch/Neutral/Avoid
@@ -252,7 +252,7 @@ mindmap
 ## 5. File Structure
 
 ```
-c:\WIGA\
+c:\Foresight\
 │
 ├── main.py                         ← Streamlit entry point (7 tabs)
 ├── .env                            ← ANTHROPIC_API_KEY (never committed)
@@ -356,4 +356,4 @@ flowchart LR
 
 ---
 
-*Generated from CLAUDE.md · wiga_expectation_intelligence_engine_spec__v3.md · wiga_company_research_repository_and_valuation_spec.md*
+*Generated from CLAUDE.md · foresight_expectation_intelligence_engine_spec__v3.md · foresight_company_research_repository_and_valuation_spec.md*

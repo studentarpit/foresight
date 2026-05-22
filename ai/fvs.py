@@ -3,7 +3,7 @@
 FVS is a 0-100 weighted score representing how confidently visible a
 company's future growth is. Primary KPI replacing convictionScore.
 
-Spec: WIGA Enhanced Intelligence Spec v2.0, Section 4.
+Spec: Foresight Enhanced Intelligence Spec v2.0, Section 4.
 """
 
 from typing import Optional

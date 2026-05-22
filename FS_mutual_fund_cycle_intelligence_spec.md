@@ -1,11 +1,11 @@
-# WIGA Mutual Fund Cycle Intelligence Engine
+# Foresight Mutual Fund Cycle Intelligence Engine
 # Detailed Technical Specification
 
 ---
 
 # 1. Overview
 
-This document captures the detailed implementation specification for the Mutual Fund Cycle Intelligence Engine inside the WIGA platform.
+This document captures the detailed implementation specification for the Mutual Fund Cycle Intelligence Engine inside the Foresight platform.
 
 The purpose of this module is NOT to identify temporary top-performing mutual funds.
 
@@ -36,7 +36,7 @@ Institutional investors focus on:
 - persistence of alpha
 - risk-adjusted performance
 
-The WIGA Mutual Fund Intelligence Engine aims to model this institutional decision-making framework.
+The Foresight Mutual Fund Intelligence Engine aims to model this institutional decision-making framework.
 
 ---
 

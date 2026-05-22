@@ -158,7 +158,7 @@ function AIPanel({ company, analysis, loading }) {
   );
 }
 
-export default function WIGARadar() {
+export default function ForesightRadar() {
   const [universe, setUniverse] = useState(MOCK_UNIVERSE);
   const [selected, setSelected] = useState(null);
   const [analysis, setAnalysis] = useState(null);
@@ -326,10 +326,10 @@ JSON structure:
             background: "linear-gradient(135deg, #00e676, #00b0ff)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: 16, fontWeight: 900, color: "#000",
-          }}>W</div>
+          }}>F</div>
           <div>
             <div style={{ fontFamily: "'DM Serif Display', serif", fontSize: 18, color: "#f0f0f0", letterSpacing: 0.5 }}>
-              WIGA Future Growth Radar
+              Foresight
             </div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", letterSpacing: 1 }}>
               AI-POWERED INDIAN EQUITY DISCOVERY

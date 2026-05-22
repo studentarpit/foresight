@@ -1,4 +1,4 @@
-# Quickstart: WIGA Future Growth Radar
+# Quickstart: Foresight
 
 ## Prerequisites
 - Python 3.10+

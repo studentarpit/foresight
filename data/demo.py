@@ -1,4 +1,4 @@
-"""Realistic dummy data for WIGA demo mode. No API key needed."""
+"""Realistic dummy data for Foresight demo mode. No API key needed."""
 
 import pandas as pd
 

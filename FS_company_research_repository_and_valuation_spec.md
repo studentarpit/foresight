@@ -1,4 +1,4 @@
-# WIGA Future Growth Radar
+# Foresight
 # Company Research Repository, Order Book Intelligence & AI Valuation Engine
 # Detailed Requirement Specification
 
@@ -6,7 +6,7 @@
 
 # 1. Purpose of This Specification
 
-This document defines the detailed implementation requirements for a major module inside the WIGA Future Growth Radar platform.
+This document defines the detailed implementation requirements for a major module inside the Foresight platform.
 
 The purpose of this module is to move the product from:
 
@@ -761,7 +761,7 @@ Generate alerts when:
 ## 16.2 Local Folder Structure
 
 ```text
-wiga-future-growth-radar/
+foresight-research-repository/
 │
 ├── app.py
 ├── requirements.txt
@@ -851,7 +851,7 @@ The module is successful when:
 
 # 19. Final Strategic Summary
 
-This module transforms WIGA from a one-stock analysis tool into a market-wide AI research platform.
+This module transforms Foresight from a one-stock analysis tool into a market-wide AI research platform.
 
 The core value is:
 

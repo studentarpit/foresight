@@ -1,4 +1,4 @@
-"""All Claude prompt templates for WIGA AI analysis. All return strict JSON.
+"""All Claude prompt templates for Foresight AI analysis. All return strict JSON.
 
 Enhanced to v2.0 spec: 20-signal architecture with FVS composite scoring.
 """
@@ -237,7 +237,7 @@ Return ONLY valid JSON. No markdown. No explanation."""
 # {concall_text}: concall transcript excerpt
 FULL_REPORT_PROMPT = """\
 You are an institutional equity research analyst generating a pre-built company research \
-report for the WIGA Future Growth Radar platform.
+report for the Foresight platform.
 
 Company data: {company_json}
 Recent order wins: {order_summary}

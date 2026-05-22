@@ -1,8 +1,8 @@
 ---
-description: "Task list for WIGA Future Growth Radar"
+description: "Task list for Foresight"
 ---
 
-# Tasks: WIGA Future Growth Radar
+# Tasks: Foresight
 
 **Input**: Design documents from `specs/main/`
 
@@ -215,8 +215,8 @@ description: "Task list for WIGA Future Growth Radar"
 
 **Purpose**: Final wiring, UX polish, error hardening across all tabs
 
-- [x] T027 Add WIGA logo text + tagline to main.py header (st.markdown with custom CSS)
-- [x] T028 [P] Add `st.set_page_config()` in main.py: title "WIGA Future Growth Radar", layout="wide", page_icon="🔍"
+- [x] T027 Add Foresight logo text + tagline to main.py header (st.markdown with custom CSS)
+- [x] T028 [P] Add `st.set_page_config()` in main.py: title "Foresight", layout="wide", page_icon="🔍"
 - [x] T029 [P] Add graceful error display: wrap all render_* calls in try/except, show st.error() on failure
 - [x] T030 [P] Create `scraper.py` — add `fetch_nse_filings(ticker)` for order win announcements (used as supplementary data in collector)
 - [x] T031 Validate `.env` loading in main.py with clear error message if `ANTHROPIC_API_KEY` is missing

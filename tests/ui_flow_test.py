@@ -1,4 +1,4 @@
-"""Smoke tests for WIGA core flows (non-UI).
+"""Smoke tests for Foresight core flows (non-UI).
 Run: python tests/ui_flow_test.py
 """
 import sys
@@ -50,7 +50,7 @@ def test_mf_fetch():
 
 
 if __name__ == "__main__":
-    print("Running WIGA smoke tests...")
+    print("Running Foresight smoke tests...")
     test_score_and_valuation()
     test_master_tracker()
     test_mf_fetch()

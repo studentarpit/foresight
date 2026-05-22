@@ -1,4 +1,4 @@
-"""Fetches and filters financial data for the WIGA stock universe and mutual funds."""
+"""Fetches and filters financial data for the Foresight stock universe and mutual funds."""
 
 import time
 import logging

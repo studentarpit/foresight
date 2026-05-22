@@ -32,7 +32,7 @@ Single page app. NO page reloads.
 ## HEADER (persistent across all tabs)
 
 Left side:
-- WIGA logo (small green hexagon icon + "WIGA" wordmark)
+- Foresight logo (small green hexagon icon + "Foresight" wordmark)
 - Tagline: "Future Growth Radar · Indian Equity Intelligence"
 
 Right side:

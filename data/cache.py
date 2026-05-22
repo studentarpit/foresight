@@ -1,4 +1,4 @@
-"""TTL-based JSON file cache for WIGA data fetches."""
+"""TTL-based JSON file cache for Foresight data fetches."""
 
 import json
 import logging

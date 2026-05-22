@@ -7,7 +7,7 @@ No restructuring — only 3 targeted insertions.
   python analyzer_patch_instructions.py --apply --labels  # + call-site labels
 
 After applying, session_summary() will print at the end of each scan.
-Set WIGA_BUDGET=5.00 in .env to see remaining-runs estimate.
+Set FORESIGHT_BUDGET=5.00 in .env to see remaining-runs estimate.
 """
 
 import sys
@@ -134,7 +134,7 @@ def main() -> None:
     with_labels = "--labels" in sys.argv
 
     print("\n" + "=" * 62)
-    print("  WIGA  analyzer.py token-logging patch")
+    print("  Foresight analyzer.py token-logging patch")
     print("=" * 62)
     print(f"  Target: {TARGET.relative_to(Path(__file__).parent)}")
 
@@ -155,7 +155,7 @@ def main() -> None:
         print(f"\n  {n} change(s) written.")
         print()
         print("  Next steps:")
-        print("    1. Add to .env:  WIGA_BUDGET=5.00")
+        print("    1. Add to .env:  FORESIGHT_BUDGET=5.00")
         print("    2. In main.py after scan completes, add:")
         print("         from ai.token_logger import session_summary")
         print("         session_summary()")

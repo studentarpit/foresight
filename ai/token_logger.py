@@ -70,7 +70,7 @@ def session_summary() -> None:
     total_cost = sum(c["cost_usd"]     for c in _session_calls)
 
     print("\n" + "-" * 72)
-    print(f"  {'WIGA Token Usage  |  Session Summary':^68}")
+    print(f"  {'Foresight Token Usage  |  Session Summary':^68}")
     print("-" * 72)
     print(f"  {'Label':<28} {'In':>6} {'Out':>6}  {'Cost':>8}")
     print("-" * 72)
@@ -165,8 +165,8 @@ def _all_time_cost() -> float:
 
 
 def _get_budget() -> float | None:
-    """Read FORESIGHT_BUDGET from env (falls back to WIGA_BUDGET for compat)."""
-    raw = (os.getenv("FORESIGHT_BUDGET") or os.getenv("WIGA_BUDGET") or "").strip()
+    """Read FORESIGHT_BUDGET from env (falls back to legacy FORESIGHT_BUDGET for compat)."""
+    raw = (os.getenv("FORESIGHT_BUDGET") or os.getenv("FORESIGHT_BUDGET") or "").strip()
     try:
         return float(raw) if raw else None
     except ValueError:

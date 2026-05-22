@@ -1,4 +1,4 @@
-# Module Contracts: WIGA
+# Module Contracts: Foresight
 
 ## universe/stocks.py
 **Exports**: `STOCK_UNIVERSE: list[dict]`, `get_tickers() -> list[str]`, `get_by_sector(sector: str) -> list[dict]`

@@ -6,7 +6,7 @@ Transforms raw guided-vs-actual quarterly data into:
 - Guidance Reliability Score (rolling %)
 - Expectation trend (improving / deteriorating)
 
-Spec: WIGA v3 — Expectation Intelligence Engine, Section 4.
+Spec: Foresight v3 — Expectation Intelligence Engine, Section 4.
 """
 
 from typing import Optional

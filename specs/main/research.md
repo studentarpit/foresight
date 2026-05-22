@@ -1,4 +1,4 @@
-# Research: WIGA Future Growth Radar
+# Research: Foresight
 
 ## Technology Decisions
 

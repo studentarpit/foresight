@@ -1,7 +1,7 @@
 """Alert Engine — detects transition signals across DMA crossovers, guidance,
 FVS bands, order inflow, and expectation gaps.
 
-Spec: WIGA v3, Section 3.5 and 5.5.
+Spec: Foresight v3, Section 3.5 and 5.5.
 
 Alerts are generated from the current scan DataFrame and optionally compared
 against a previous snapshot stored in data/alerts_history.json.

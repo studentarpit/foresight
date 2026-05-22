@@ -1,4 +1,4 @@
-# Implementation Plan: WIGA Future Growth Radar
+# Implementation Plan: Foresight
 
 **Branch**: `main` | **Date**: 2026-05-22 | **Spec**: [spec.md](spec.md)
 
@@ -62,7 +62,7 @@ specs/main/
 ### Source Code (repository root)
 
 ```text
-c:\WIGA\
+c:\Foresight\
 ├── main.py                  ← streamlit run main.py
 ├── .env                     ← ANTHROPIC_API_KEY (not committed)
 ├── requirements.txt

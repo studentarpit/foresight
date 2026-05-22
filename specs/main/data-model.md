@@ -1,4 +1,4 @@
-# Data Model: WIGA Future Growth Radar
+# Data Model: Foresight
 
 ## Core Entities
 

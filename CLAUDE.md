@@ -23,7 +23,7 @@ platform for retail investors who want institutional-style research.
 
 ## Folder Structure
 
-wiga/
+foresight/
 ├── CLAUDE.md
 ├── .specify/
 ├── .env
