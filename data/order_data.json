@@ -1,0 +1,87 @@
+{
+  "MAZDOCK": [
+    {
+      "id": "2025-01-15_84231",
+      "announcement_date": "2025-01-15",
+      "description": "Receipt of order from Indian Navy for construction of two P17B stealth frigates valued at approximately Rs. 12,000 Crore under the Make in India programme.",
+      "order_value_cr": 12000.0,
+      "customer": "Indian Navy",
+      "customer_type": "government",
+      "order_type": "domestic",
+      "segment": "Naval Shipbuilding",
+      "execution_period": "7 years",
+      "is_repeat_order": false,
+      "significance": "HIGH",
+      "confidence": 0.95,
+      "pdf_url": ""
+    },
+    {
+      "id": "2024-10-08_61234",
+      "announcement_date": "2024-10-08",
+      "description": "Letter of Award received from Ministry of Defence for P75 submarine programme. Contract value approximately Rs. 35,000 Crore for six submarines.",
+      "order_value_cr": 35000.0,
+      "customer": "Ministry of Defence",
+      "customer_type": "government",
+      "order_type": "domestic",
+      "segment": "Submarine Programme",
+      "execution_period": "10 years",
+      "is_repeat_order": false,
+      "significance": "HIGH",
+      "confidence": 0.92,
+      "pdf_url": ""
+    },
+    {
+      "id": "2024-07-22_39812",
+      "announcement_date": "2024-07-22",
+      "description": "Intimation of order from Indian Coast Guard for three advanced offshore patrol vessels. Order value Rs. 1,800 Crore.",
+      "order_value_cr": 1800.0,
+      "customer": "Indian Coast Guard",
+      "customer_type": "government",
+      "order_type": "domestic",
+      "segment": "Patrol Vessels",
+      "execution_period": "3 years",
+      "is_repeat_order": true,
+      "significance": "MEDIUM",
+      "confidence": 0.88,
+      "pdf_url": ""
+    }
+  ],
+  "BEL": [
+    {
+      "id": "2025-02-10_73412",
+      "announcement_date": "2025-02-10",
+      "description": "Receipt of order for Long Range Surface-to-Air Missile (LRSAM) system Batch II from Indian Air Force valued at Rs. 8,200 Crore.",
+      "order_value_cr": 8200.0,
+      "customer": "Indian Air Force",
+      "customer_type": "government",
+      "order_type": "domestic",
+      "segment": "Missile Systems",
+      "execution_period": "4 years",
+      "is_repeat_order": true,
+      "significance": "HIGH",
+      "confidence": 0.93,
+      "pdf_url": ""
+    },
+    {
+      "id": "2024-12-05_55678",
+      "announcement_date": "2024-12-05",
+      "description": "Contract awarded for Akash Next Generation surface-to-air missile system ground equipment valued at approximately Rs. 4,500 Crore.",
+      "order_value_cr": 4500.0,
+      "customer": "Indian Army",
+      "customer_type": "government",
+      "order_type": "domestic",
+      "segment": "Air Defence Systems",
+      "execution_period": "3 years",
+      "is_repeat_order": false,
+      "significance": "HIGH",
+      "confidence": 0.9,
+      "pdf_url": ""
+    }
+  ],
+  "TITAGARH": [],
+  "RVNL": [],
+  "KECL": [],
+  "KAYNES": [],
+  "WAAREEENER": [],
+  "TECHNO": []
+}

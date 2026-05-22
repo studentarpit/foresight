@@ -1,0 +1,51 @@
+{
+  "operatingLeverageDetected": false,
+  "marginTrend": "stable",
+  "valuationCommentary": "Based on guidance vs actual metrics.",
+  "bull": {
+    "revenue": [
+      1126250.0,
+      1492281.2,
+      1977272.7
+    ],
+    "profit": [
+      138663.9,
+      183729.7,
+      243441.8
+    ],
+    "targetPrice": 7303254.0,
+    "cagr": 1097.8
+  },
+  "base": {
+    "revenue": [
+      1062500.0,
+      1328125.0,
+      1660156.2
+    ],
+    "profit": [
+      130050.0,
+      162562.5,
+      203203.1
+    ],
+    "targetPrice": 6096093.0,
+    "cagr": 1027.8
+  },
+  "bear": {
+    "revenue": [
+      998750.0,
+      1173531.2,
+      1378899.2
+    ],
+    "profit": [
+      121527.9,
+      142795.3,
+      167784.5
+    ],
+    "targetPrice": 5033535.0,
+    "cagr": 958.0
+  },
+  "savedDate": "2026-05-22",
+  "ticker": "MAZDOCK",
+  "years": 3,
+  "currentPrice": 4250.0
+}

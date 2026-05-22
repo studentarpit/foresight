@@ -1,0 +1,51 @@
+{
+  "ticker": "BEL",
+  "savedDate": "2026-05-22",
+  "years": 3,
+  "currentPrice": 300.0,
+  "bull": {
+    "revenue": [
+      24000,
+      29000,
+      35000
+    ],
+    "profit": [
+      5280,
+      6380,
+      7700
+    ],
+    "targetPrice": 460.0,
+    "cagr": 15.3
+  },
+  "base": {
+    "revenue": [
+      21000,
+      25200,
+      30200
+    ],
+    "profit": [
+      4620,
+      5544,
+      6644
+    ],
+    "targetPrice": 390.0,
+    "cagr": 9.1
+  },
+  "bear": {
+    "revenue": [
+      18000,
+      20700,
+      23800
+    ],
+    "profit": [
+      3960,
+      4554,
+      5236
+    ],
+    "targetPrice": 260.0,
+    "cagr": -4.8
+  },
+  "operatingLeverageDetected": false,
+  "marginTrend": "stable",
+  "valuationCommentary": "Base case on 22% revenue CAGR with margins steady at 22%. Bear case models 15% private-sector share loss."
+}

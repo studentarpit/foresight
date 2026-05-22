@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -m streamlit --version 2>&1)",
+      "PowerShell(python -c \"import streamlit; print\\(streamlit.__version__\\)\")",
+      "PowerShell(Start-Sleep -Seconds 3; \\(Invoke-WebRequest -Uri \"http://localhost:8501\" -TimeoutSec 5 -UseBasicParsing\\).StatusCode)"
+    ]
+  }
+}

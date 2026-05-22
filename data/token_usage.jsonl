@@ -1,0 +1,4 @@
+{"ts": "2026-05-22T07:56:24+00:00", "label": "test_call", "input_tokens": 500, "output_tokens": 200, "cost_usd": 0.0045}
+{"ts": "2026-05-22T07:56:42+00:00", "label": "scan_batch_0", "input_tokens": 1840, "output_tokens": 620, "cost_usd": 0.01482}
+{"ts": "2026-05-22T07:56:42+00:00", "label": "deep_BEL", "input_tokens": 2100, "output_tokens": 890, "cost_usd": 0.01965}
+{"ts": "2026-05-22T07:56:42+00:00", "label": "deep_HAL", "input_tokens": 2050, "output_tokens": 910, "cost_usd": 0.0198}
