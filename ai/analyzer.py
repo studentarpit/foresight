@@ -22,7 +22,7 @@ from ai.prompts import (
 from ai.token_logger import record, session_summary  # noqa: F401
 
 logger = logging.getLogger(__name__)
-_MODEL = "claude-sonnet-4-20250514"
+_MODEL = "claude-sonnet-4-6"
 _BATCH_SIZE = 10  # companies per Claude call to stay within token limits
 
 
@@ -131,7 +131,30 @@ def score_universe(df: pd.DataFrame) -> pd.DataFrame:
         return compute_fvs_from_scan(r)
 
     merged["fvs"] = merged.apply(_fvs, axis=1)
+
+    from ai.heat_engine import compute_heat_score
+    merged["heatScore"] = merged.apply(
+        lambda r: compute_heat_score({}, r.to_dict()), axis=1
+    )
+
+    # Spec 07: add FII/DII Flow Score (non-blocking; None when data unavailable)
+    try:
+        from data.fii_dii_engine import compute_flow_score
+        merged["flowScore"] = merged["ticker"].apply(
+            lambda t: _safe_flow_score(t, compute_flow_score)
+        )
+    except Exception:
+        merged["flowScore"] = None
+
     return merged
+
+
+def _safe_flow_score(ticker: str, fn):
+    """Call compute_flow_score; returns None (not 50) when data is unavailable."""
+    try:
+        return fn(ticker)
+    except Exception:
+        return None
 
 
 def analyze_company(company: Union[pd.Series, dict]) -> dict:

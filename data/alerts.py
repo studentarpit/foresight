@@ -123,6 +123,79 @@ def detect_alerts(
     return alerts
 
 
+# ── Spec 07: Smart Money Accumulation alerts ──────────────────────────────────
+
+def detect_smart_money_alerts(scan_df: pd.DataFrame) -> list[dict]:
+    """Return SMART_MONEY_ACCUMULATION alerts from cache — no new HTTP calls.
+
+    Fires when FII has been accumulating for 2+ consecutive quarters AND a
+    FII/DII BUY bulk deal for the same stock exists within the last 30 days.
+    """
+    from datetime import date, timedelta
+    from data.fii_dii_engine import detect_accumulation_distribution, fetch_bulk_block_deals
+
+    alerts: list[dict] = []
+    cutoff = (date.today() - timedelta(days=30)).isoformat()
+
+    for _, row in scan_df.iterrows():
+        ticker = row.get("ticker", "")
+        if not ticker:
+            continue
+        try:
+            accum = detect_accumulation_distribution(ticker)
+        except Exception:
+            continue
+
+        if accum.get("fii_trend") != "INCREASING":
+            continue
+        if (accum.get("duration_quarters") or 0) < 2:
+            continue
+
+        try:
+            deals = fetch_bulk_block_deals(ticker)
+        except Exception:
+            deals = []
+
+        recent_buy = None
+        for deal in deals:
+            if deal.get("side") != "BUY":
+                continue
+            if deal.get("entity_type") not in ("FII", "DII"):
+                continue
+            if (deal.get("date") or "") >= cutoff:
+                recent_buy = deal
+                break
+
+        if recent_buy is None:
+            continue
+
+        duration  = accum.get("duration_quarters", 0)
+        fii_qoq   = accum.get("fii_last_qoq")
+        entity    = recent_buy.get("client", "")
+        value_cr  = recent_buy.get("value_cr", 0)
+        deal_date = recent_buy.get("date", "")
+
+        alerts.append({
+            "ticker":            ticker,
+            "name":              row.get("name", ticker),
+            "type":              "SMART_MONEY_ACCUMULATION",
+            "icon":              "🚨",
+            "priority":          1,
+            "message":           (
+                f"FII accumulating {duration}Q · "
+                f"{entity} bought ₹{value_cr:.0f} Cr on {deal_date}"
+            ),
+            "fii_change_pct":    fii_qoq,
+            "duration_quarters": duration,
+            "deal_entity":       entity,
+            "deal_value_cr":     value_cr,
+            "deal_date":         deal_date,
+            "ts":                datetime.now().isoformat(timespec="seconds"),
+        })
+
+    return alerts
+
+
 # ── Snapshot persistence ──────────────────────────────────────────────────────
 
 def save_snapshot(df: pd.DataFrame) -> None:

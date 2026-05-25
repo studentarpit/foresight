@@ -270,3 +270,134 @@ Return a single JSON object:
 }}
 
 Return ONLY valid JSON. No markdown. No explanation."""
+
+
+# ── Sentiment & Geopolitical prompts (Spec 06) ───────────────────────────────
+
+SENTIMENT_ANALYSIS_PROMPT = """\
+You are a senior macro analyst specialising in Indian equity markets.
+Analyse the news headlines below for impact on Indian listed companies,
+focusing on sectors: Defence, Railways, EPC, EMS, Power, Solar/Wind.
+
+Headlines (JSON array, each has headline, source, published):
+{headlines_json}
+
+Universe of stocks to map impact to:
+{universe_json}
+
+For each distinct signal detected return one object. Merge headlines about the same event.
+
+[
+  {{
+    "signal_type": "POLICY",
+    "headline": "<concise 1-line description of the signal>",
+    "sentiment": "BULLISH",
+    "confidence": 78,
+    "affected_sectors": ["Defence", "EMS"],
+    "affected_stocks": ["BEL", "HAL", "KAYNES"],
+    "impact_timeline": "MID",
+    "impact_magnitude": "HIGH",
+    "reasoning": "<2 sentences explaining why this signal matters>",
+    "positional_opportunity": false,
+    "source": "<source name>"
+  }}
+]
+
+signal_type: POLICY / POLITICAL / MARKET / GLOBAL / WAR / COMMODITY / MISC
+sentiment: BULLISH / BEARISH / NEUTRAL  confidence: 0-100
+impact_timeline: NEAR (0-30d) / MID (1-6m) / LONG (6m+)
+impact_magnitude: HIGH / MEDIUM / LOW
+positional_opportunity: true only when confidence>75 AND impact_timeline=NEAR AND clear catalyst
+
+Return ONLY valid JSON array. No markdown. No preamble."""
+
+
+POSITIONAL_OPPORTUNITY_PROMPT = """\
+You are a tactical equity trader assessing a short-term positional opportunity
+for an Indian listed stock based on a market signal.
+
+Signal: {signal_json}
+Stock data: {stock_json}
+
+Assess whether a genuine positional trade exists. Consider:
+- Is the catalyst specific and time-bound?
+- Is the technical setup supportive (price vs 200DMA)?
+- Is there a clear entry, target, and stop-loss?
+
+{{
+  "opportunity_exists": true,
+  "direction": "LONG",
+  "entry_low": 3200,
+  "entry_high": 3350,
+  "target": 3800,
+  "stoploss": 3050,
+  "timeframe_days": 21,
+  "trigger": "<what confirms entry>",
+  "confidence": 82,
+  "reasoning": "<2-3 sentences>",
+  "disclaimer": "Not investment advice. For informational purposes only. DYOR."
+}}
+
+If no opportunity exists return {{"opportunity_exists": false}}.
+Return ONLY valid JSON. No markdown. No preamble."""
+
+
+GEOPOLITICAL_IMPACT_PROMPT = """\
+You are a geopolitical risk analyst specialising in Indian equity markets.
+Assess the impact of this event on Indian stocks in our universe.
+
+Event: {event_text}
+Universe: {universe_json}
+
+{{
+  "event_summary": "<1 sentence>",
+  "overall_market_impact": "POSITIVE",
+  "affected_sectors": [
+    {{"sector": "Defence", "impact": "POSITIVE", "reasoning": "<1 sentence>"}}
+  ],
+  "affected_stocks": [
+    {{"ticker": "BEL", "impact": "POSITIVE", "magnitude": "HIGH", "reasoning": "<1 sentence>"}}
+  ],
+  "timeline": "NEAR",
+  "confidence": 70
+}}
+
+Return ONLY valid JSON. No markdown. No preamble."""
+
+# ── Spec 07: FII/DII Flow Intelligence ───────────────────────────────────────
+
+FII_DII_PATTERN_PROMPT = """Analyze this FII/DII shareholding pattern and bulk deal history for an Indian listed company.
+
+Company: {symbol}
+
+Shareholding pattern (last 8 quarters, newest last):
+{shareholding_json}
+
+Bulk/block deal history (recent):
+{bulk_deals_json}
+
+Accumulation/distribution signal:
+{accum_signal_json}
+
+Identify:
+1. Whether smart money is accumulating or distributing
+2. How long this pattern has been running
+3. What the combined FII+DII signal means
+4. Historical precedent — what typically happens to price when a similar pattern occurs
+5. Whether this creates a positional trading opportunity
+
+Return ONLY valid JSON. No markdown. No preamble.
+{{
+  "accumulation_score": 0,
+  "distribution_score": 0,
+  "smart_money_verdict": "",
+  "pattern_duration_quarters": 0,
+  "fii_conviction": "HIGH",
+  "dii_conviction": "MEDIUM",
+  "combined_signal": "NEUTRAL",
+  "historical_insight": "",
+  "price_impact_prediction": "",
+  "positional_opportunity": false,
+  "confidence": 0,
+  "reasoning": ""
+}}"""

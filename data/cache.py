@@ -9,15 +9,30 @@ from typing import Any, Optional
 
 logger = logging.getLogger(__name__)
 
-_CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
+_CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cache")
 
 # TTL in seconds per source type (per spec section 6.2)
 _TTL = {
-    "screener": 86_400,      # 24 h
-    "filing": 604_800,       # 7 d
-    "concall": 7_776_000,    # 90 d (one quarter)
-    "pres": 2_592_000,       # 30 d
-    "orders": 86_400,        # 24 h (order announcements)
+    "screener":        86_400,   # 24 h
+    "filing":         604_800,   # 7 d
+    "concall":      7_776_000,   # 90 d (one quarter)
+    "pres":         2_592_000,   # 30 d
+    "orders":          86_400,   # 24 h (order announcements)
+    "tl_fundamentals":    21_600,   # 6 h
+    "tl_concall":         21_600,   # 6 h
+    "tl_dvm":             21_600,   # 6 h
+    "quarterly":          21_600,   # 6 h
+    "sentiment_cues":        900,   # 15 min (global market cues)
+    "sentiment_news":      1_800,   # 30 min (news headlines + signals)
+    "sentiment_scores":    1_800,   # 30 min (per-stock sentiment scores)
+    "fii_dii":             3_600,   # 1 h
+    "bulk_deals":          3_600,   # 1 h
+    "fii_dii_daily":       3_600,   # 1 h (market-wide FII/DII strip)
+    "shareholding":       21_600,   # 6 h (screener.in shareholding per stock)
+    "bulk_block":          3_600,   # 1 h (bulk/block deals per stock)
+    "accum_dist":         21_600,   # 6 h (accumulation/distribution signal)
+    "flow_score":         21_600,   # 6 h (FII/DII flow score per stock)
+    "bulk_deals_raw":      3_600,   # 1 h (market-wide raw bulk deal list)
 }
 
 
